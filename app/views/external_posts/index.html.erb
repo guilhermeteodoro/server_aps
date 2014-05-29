@@ -1,0 +1,31 @@
+<h1>Posts</h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Corpo</th>
+      <th>Publicado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @external_posts.each do |external_post| %>
+      <tr>
+        <td><%= external_post.title %></td>
+        <td><%= truncate(external_post.body, :length => 150, :omission => '... (continua)')%></td>
+        <td><%= external_post.published %></td>
+        <td><%= link_to 'Mais', external_post %></td>
+        <td><%= link_to 'Editar', edit_external_post_path(external_post) %></td>
+        <td><%= link_to 'Excluir', external_post, method: :delete, data: { confirm: 'Tem certeza disso?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Post', new_external_post_path %>

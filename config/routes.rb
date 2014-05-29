@@ -1,5 +1,9 @@
 ServerAps::Application.routes.draw do
   
+  resources :external_posts
+
+  resources :posts
+
   root "pages#home"
   
   get "/home", to: "pages#home", as: "home"

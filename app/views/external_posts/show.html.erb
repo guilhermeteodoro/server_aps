@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Título:</strong>
+  <%= @external_post.title %>
+</p>
+
+<p>
+  <strong>Corpo:</strong>
+  <%= @external_post.body %>
+</p>
+
+<p>
+  <strong>Publicado:</strong>
+  <%= @external_post.published %>
+</p>
+
+<%= link_to 'Editar', edit_external_post_path(@external_post) %> |
+<%= link_to 'Voltar', external_posts_path %>

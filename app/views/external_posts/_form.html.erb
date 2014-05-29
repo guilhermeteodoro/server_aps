@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-sm-6">
+    <%= form_for(@external_post) do |f| %>
+      <% if @external_post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@external_post.errors.count, "error") %> prohibited this external_post from being saved:</h2>
+
+          <ul>
+          <% @external_post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label 'Título' %>
+        <div class="row">
+          <div class="col-sm-6">
+            <%= f.text_field :title %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label 'Corpo' %>
+        <div class="row">
+          <div class="col-sm-6">
+            <%= f.text_area :body %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label 'Publicado' %>
+        <div class="row">
+          <div class="col-sm-6">
+            <%= f.check_box :published %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <%= f.submit 'Salvar', class: "btn btn-primary" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
