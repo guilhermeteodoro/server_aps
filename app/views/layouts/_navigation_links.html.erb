@@ -1,7 +1,7 @@
+<li><%= link_to "Posts", external_posts_path %></li>
 <% if !current_user %>
 <li><%= link_to "Login", signin_path %></li>
 <% else %>
 <li><%= link_to "Admin", admin_root_path %></li>
 <li><%= link_to "Sair", signout_path %></li>
 <% end %>
-<li><%= link_to "Posts", external_posts_path %></li>
